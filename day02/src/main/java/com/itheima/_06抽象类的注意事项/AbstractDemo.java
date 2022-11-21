@@ -1,4 +1,4 @@
-package com.itheima._05抽象类设计模板模式._06抽象类的注意事项;
+package com.itheima._06抽象类的注意事项;
 
 /**
  * 目标：抽象类的注意事项和总结
