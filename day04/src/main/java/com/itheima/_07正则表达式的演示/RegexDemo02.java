@@ -20,7 +20,23 @@ package com.itheima._07正则表达式的演示;
  *      \S 非空白字符：[^\s]
  *      \w 单词字符：[a-zA-Z_0-9]
  *      \W 非单词字符：[^/w]
- *  以上正则表达式只能校验单个字符、
+ *  以上正则表达式只能校验单个字符。
+ *
+ *  Greedy 数量词
+ *      X? X, 一次或一次也没有
+ *      X* X, 零次或多次
+ *      X+ X, 一次或多次
+ *      X{n} X, 恰好n次
+ *      X{n,} X, 至少n次
+ *      X{n,m} X, 至少n次，但是不超过m次
+ *
+ * java API pattern中有很多详解
  */
 public class RegexDemo02 {
+    public static void main(String[] args) {
+        System.out.println("a".matches("[abc]"));
+        System.out.println("z".matches("[abc]"));
+        System.out.println("a".matches("[^abc]"));
+        System.out.println("z".matches("[^abc]"));
+    }
 }
