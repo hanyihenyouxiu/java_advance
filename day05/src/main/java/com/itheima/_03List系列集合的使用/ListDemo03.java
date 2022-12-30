@@ -15,6 +15,10 @@ import java.util.List;
  *  - public E removeLast()：移除并返回此列表的最后一个元素。
  *  - public E pop()：从此列表所表示的堆栈处弹出一个元素。
  *  - public void push(E e)：将元素推入此列表所表示的堆栈。
+ *
+ * 小结：
+ *      LinkedList是支持双链表，定位前后的元素是非常快的，增删首尾元素也是最快的。
+ *      所以提供了很多操作首位元素的特殊API可以做栈和队列的实现。
  */
 public class ListDemo03 {
 
