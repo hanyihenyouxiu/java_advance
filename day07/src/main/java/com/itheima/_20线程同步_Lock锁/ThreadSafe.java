@@ -10,6 +10,9 @@ package com.itheima._20线程同步_Lock锁;
  *      Lock锁也称同步锁，加锁和释放锁方法化了，如下：
  *          -- public void lock()：加锁
  *          -- public void unlock()：释放锁
+ * 小结：
+ *  线程安全性能差
+ *  线程不安全性能好，假如开发中不会存在多线程安全问题，建议使用线程不安全的设计。
  */
 public class ThreadSafe {
     public static void main(String[] args) {
