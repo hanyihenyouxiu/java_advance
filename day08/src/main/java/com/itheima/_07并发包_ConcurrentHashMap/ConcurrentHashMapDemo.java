@@ -1,5 +1,9 @@
 package com.itheima._07并发包_ConcurrentHashMap;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * 目标：并发包的介绍。
  *
@@ -16,4 +20,32 @@ package com.itheima._07并发包_ConcurrentHashMap;
  *      -- ConcurrentHashMap保证了线程安全，综合性能较好！
  */
 public class ConcurrentHashMapDemo {
+
+    //public static Map<String, String> map = new HashMap<>();
+    public static ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable(), "线程一");
+        t1.start();
+        Thread t2 = new Thread(new MyRunnable(), "线程二");
+        t2.start();
+        try {
+            t1.join();
+            t2.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(map.size());
+    }
+}
+
+class MyRunnable implements Runnable{
+
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName());
+        for (int i = 0; i < 50000; i++) {
+            ConcurrentHashMapDemo.map.put(Thread.currentThread().getName() + i, i + "");
+        }
+    }
 }
